@@ -1,4 +1,13 @@
 import { loadEnv, defineConfig } from '@medusajs/framework/utils'
+import * as dotenv from 'dotenv'
+import * as path from 'path'
+
+// Load environment-specific .env file
+const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development'
+dotenv.config({ path: path.resolve(process.cwd(), envFile) })
+
+// Also load the default .env file if it exists (for backward compatibility)
+dotenv.config({ path: path.resolve(process.cwd(), '.env') })
 
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 

@@ -24,3 +24,6 @@ build
 !.yarn/versions
 
 .medusa
+# Environment files
+.env.development
+.env.production
