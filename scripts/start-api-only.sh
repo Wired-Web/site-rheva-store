@@ -15,8 +15,8 @@ if [ $? -eq 0 ]; then
     echo "✅ Database migrations completed successfully"
     echo "🚀 Starting Medusa API server..."
     
-    # Run in development mode but with production env vars
-    yarn medusa develop
+    # Run in production mode
+    yarn medusa start
 else
     echo "❌ Database migrations failed"
     exit 1
