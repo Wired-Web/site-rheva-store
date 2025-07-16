@@ -6,8 +6,10 @@ import * as path from 'path'
 const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development'
 dotenv.config({ path: path.resolve(process.cwd(), envFile) })
 
-// Also load the default .env file if it exists (for backward compatibility)
-dotenv.config({ path: path.resolve(process.cwd(), '.env') })
+// Only load the default .env file in development (not production)
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config({ path: path.resolve(process.cwd(), '.env') })
+}
 
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
