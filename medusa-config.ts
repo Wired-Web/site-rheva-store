@@ -14,6 +14,9 @@ if (process.env.NODE_ENV !== 'production') {
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
 module.exports = defineConfig({
+  admin: {
+    disable: process.env.NODE_ENV === 'production' && process.env.ADMIN_DISABLED === "true",
+  },
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
     http: {
