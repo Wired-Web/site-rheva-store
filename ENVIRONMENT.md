@@ -34,7 +34,7 @@ yarn start:prod
 - **Redis**: `redis://localhost:6379`
 
 ### Production (Render)
-- **Database**: `postgresql://rheva:6BFbiFFBGMeUjnqzO5s16TlWRnFPuZHM@dpg-d1r5mrur433s739t3s4g-a/rheva_db`
+- **Database**: `postgresql://[postgresql://USER:PASSWORD@INTERNAL_HOST:PORT/DATABASE?sslmode=require]`
 - **Redis**: `redis://localhost:6379` (update this for production Redis)
 
 ## Manual Environment Switching
