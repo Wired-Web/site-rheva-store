@@ -3,6 +3,15 @@
 # API-only startup script for production
 echo "🚀 Starting API-only production server..."
 
+# Kill any existing process on port 9000
+echo "🔍 Checking for existing processes on port 9000..."
+EXISTING_PID=$(lsof -ti:9000)
+if [ ! -z "$EXISTING_PID" ]; then
+    echo "🔄 Killing existing process on port 9000 (PID: $EXISTING_PID)"
+    kill -9 $EXISTING_PID
+    sleep 2
+fi
+
 # Set production environment
 export NODE_ENV=production
 export ADMIN_DISABLED=true

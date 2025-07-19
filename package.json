@@ -18,7 +18,7 @@
     "start": "medusa start",
     "dev": "medusa develop",
     "dev:local": "./scripts/dev.sh medusa develop",
-    "dev:prod": "./scripts/prod.sh medusa develop",
+    "dev:prod": "./scripts/dev-prod.sh medusa start",
     "start:local": "./scripts/dev.sh medusa start",
     "start:prod": "./scripts/prod.sh medusa start",
     "test:integration:http": "TEST_TYPE=integration:http NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand --forceExit",
