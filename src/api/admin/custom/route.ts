@@ -6,3 +6,10 @@ export async function GET(
 ) {
   res.sendStatus(200);
 }
+
+export async function OPTIONS(
+  req: MedusaRequest,
+  res: MedusaResponse
+) {
+  res.sendStatus(200);
+}
