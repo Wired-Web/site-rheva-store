@@ -1,5 +1,7 @@
 #!/bin/bash
-
+echo "ADMIN_CORS=$ADMIN_CORS"
+echo "STORE_CORS=$STORE_CORS"
+echo "AUTH_CORS=$AUTH_CORS"
 # API-only startup script for production
 echo "🚀 Starting API-only production server..."
 
