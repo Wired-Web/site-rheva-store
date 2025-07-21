@@ -35,8 +35,13 @@ async function corsMiddleware(
 export default defineMiddlewares({
   routes: [
     {
-      matcher: /.*/,
-      middlewares: [corsMiddleware],
+      matcher: "/admin/auth",
+      middlewares: [
+        (req, res, next) => {
+            console.log("TEST MIDDLEWARE HIT", req.method, req.url)
+            next()
+          }
+      ],
     },
   ],
 }); 
